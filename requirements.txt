@@ -12,3 +12,5 @@ channels
 requests
 openai
 coinbase_commerce
+gunicorn
+dj_database_url
