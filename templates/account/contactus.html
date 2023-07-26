@@ -1,0 +1,69 @@
+<!-- Description: Contact Us -->
+{% load static %}
+<main>
+    <section class="contactus-section" id="contactus-section">
+    <h3>contact us</h3>
+     <div class="contact-info">
+        <div class="flex-container">
+          <div class="address">
+            <div class="top">
+              <div class="img-container">
+                    <img src="{% static './images/location-icon.svg' %}" alt="location icon"/>
+                </div>
+                <h4>address</h4>
+             </div>
+              <address>
+                No 23 Zik's Drive,
+                <br>
+              Opp Christ Church Chapel,
+              <br>
+              UNN.
+            </address>
+            </div>
+            <div class="phone">
+             <div class="top">
+                <div class="img-container">
+                <img src="{% static './images/phone-contact-icon.svg' %}" alt="phone icon"/>
+                </div>
+                <h4>phone</h4>
+            </div>
+            <div class="bottom">
+             <p><a href="tel:+234 9017912839">+234 901-791-2839</a></p>
+             <p><a href="tel:+234 8082182438">+234 808-218-2438</a></p>
+             <p><a href="tel:+234 8149213332">+234 814-921-3332</a></p>
+            </div>		 
+            </div>
+            
+            <div class="email">
+             <div class="top">
+                <div class="img-container">
+                    <img src="{% static './images/email-contact-icon.svg' %}" alt="email icon"/>
+                </div>
+                <h4>email</h4>
+             </div>
+             <a href="mailto:codeblazeacademy@gmail.com"> codeblazeacademy@gmail.com</a>
+            </div>
+        </div>
+    
+        <div class="message-row">
+            <h3>message us</h3>
+            <form>
+                <div class="form-field-container">
+                <div class="form-field">
+                    <input type="text" id="name" placeholder="Your name" required/>
+                </div>
+                <div class="form-field">
+                    <input type="email" id="email" placeholder="Email address" required/>
+                </div>
+                <div class="form-field">
+                    <textarea name="message" id="message" cols="24" rows="4" placeholder="Enter your message" required></textarea>
+                </div>
+               </div>
+                <div class="contactus-btn">
+                    <button class="cta-btn" type="submit">send</button>
+                </div>
+            </form>
+        </div>
+     </div>
+    </section>
+   </main>

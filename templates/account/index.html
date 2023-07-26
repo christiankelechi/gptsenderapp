@@ -1,0 +1,751 @@
+{% load custom_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name ="keywords" content="coding,coding school,programming school in nsukka,i want learn coding,best nigeria programming school, best online tutorial for HTML, CSS and javaScript" >
+	<meta name="description" content="best coding hub for all">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta http-equiv="refresh" content="10"/> -->
+	<title>Codeblaze Academy</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link href="{% static './images/codeblazelogo1.png' %}" rel="icon" type="images/favicon">
+	<link href="{% static './font-awesome/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static './css/index.css' %}" rel="stylesheet">
+	<link href="{% static './css/index.css' %}" rel="stylesheet">
+	<script type="text/javascript"> window.$crisp=[];window.CRISP_WEBSITE_ID="39b8b194-d41a-4444-ac6a-84edebf05f11";(function(){ d=document;s=d.createElement("script"); s.src="https://client.crisp.chat/l.js"; s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})(); </script>
+</head>
+<body>
+	<header class="header-wrapper index-page">
+	<div class="site-header">
+		<div class="main-header-wrapper">
+		<div class="navigation-container main-nav">
+		<div class="mobile-header-navicons">
+		<div class="codeblaze-logo">
+		<div class="image-container">
+		<a href="{% url 'index' %}"><img src="{% static './images/codeblazeacademy-logo.png' %}" alt="company logo">
+		</a>
+		</div></div>
+		<div class="btn-container">
+		<div class="bar-btn">&#9776;</div>
+	    </div>
+	    </div>
+		<nav class="nav-wrapper">
+			<ul class="nav-menu">
+				{% if user.is_authenticated %}
+				<li><a href="{% url 'dashboardhome' %}">Home</a></li>
+				<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+				<li><a href="{% anchor 'index' 'service-section' %}">Services</a></li>
+				<li><a href="{% anchor 'index' 'affordable-pkgs-section' %}">Courses</a></li>
+				<!-- <li><a>Project</a></li> -->
+				<li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+				<li><a href="{% url 'logout' %}">Logout</a></li>
+				{% else %}
+				<li><a href="{% url 'dashboardhome' %}">Home</a></li>
+				<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+				<li><a href="{% anchor 'index' 'service-section' %}">Services</a></li>
+				<li><a href="{% anchor 'index' 'affordable-pkgs-section' %}">Courses</a></li>
+				<!-- <li><a>Project</a></li> -->
+				<li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+				<li><a href="{% url 'login' %}">Sign In</a></li>
+				<!-- <li><a href="{% url 'logout' %}">Logout</a></li> -->
+				{% endif %}
+			</ul>
+		</nav>
+
+		</div>
+		</div>
+
+		<!-- header contents -->
+		<div class="header-container">
+			<div class="float-left">
+				<p>Nobody is born 
+				<span class="caption-underline"> a coder</span></p>
+				<p>You can learn to code as well</p>
+				<small>codeblaze bridge the gap between idea and reality</small>
+				<a class="cta-btn" href="{% url 'register' %}">
+				register now
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- styles for this section are written in header.css file-->
+<section class="what-we-do">
+	<figure>
+		<div class="card">
+			<div>
+				<div class="img-container">
+					<img src="{% static './images/board-of-directors.svg' %}" alt="people in a meeting">
+				</div>
+			</div>
+			<div>
+				<p>
+			we’ll help you create a legal/eyecatching projects, Our goal is to
+	        get you in with the best of any project you desire
+				</p>
+			</div>
+		</div>
+	</figure>
+	<figure>
+		<div class="card">
+			<div>
+				<div class="img-container">
+					<img src="{% static './images/board-of-directors.svg' %}" alt="people in a meeting">
+				</div>
+			</div>
+			<div>
+				<p>
+					we teach and educate our students on the trending skills/ languages regarding to programming .
+				</p>
+			</div>
+		</div>
+	</figure>
+	<figure>
+		<div class="card">
+			<div>
+				<div class="img-container">
+					<img src="{% static './images/board-of-directors.svg' %}" alt="people in a meeting">
+				</div>
+			</div>
+			<div>
+				<p>
+					We provide learning resources, videos, written materials for our students in order to equip them with trending IT skills.
+				</p>
+			</div>
+		</div>
+	</figure>
+</section>
+<main class="main-contents">
+	<!-- {% static '' %} -->
+
+	<!-- Description: Academy discuss -->
+	<div class="discussion-and-grow-business">
+	<section class="discuss-our-academy" id="aboutus-section">
+		<div class="align-left">
+			<div class="img-container">
+				<img src="{% static './images/group-discussion.svg' %}" alt="group discussion">
+			</div>
+		</div>
+		<div class="align-right">
+			<h4>Let discuss about our Academy</h4>
+			<p>
+				We render services in IT software skills focusing more on problem driven approach. We want to get anudience of those of who are tech savvy that will like to participate in withnessing the industry 4.0 IT technologies move to the next level.
+			</p>
+		</div>
+	</section>
+
+	<!-- Description: Help grow business  -->
+	<section class="grow-business">
+		<div class="align-left">
+			<h4>We can help you grow your Business </h4>
+			<p>
+				CodeBlaze Academy was established to target audience in business firm, engineering firm and general audience, by providing technology related services that enhance business effectiveness, providing Engineering sectors with both small scale and large scale designed software to use for their various activities, such as Arduino based automated systems, pneumatic systems and hardware component and other specialization suh as web and mobile Application development.
+			</p>
+		</div>
+		<div class="align-right">
+			<div class="img-container">
+				<img src="{% static './images/helping-hand.svg' %}" alt="grow business">
+			</div>
+		</div>
+	</section>
+</div>
+
+
+	<!-- Description: Services Section -->
+	<section class="service-section" id="service-section">
+		<h2> services rendered</h2>
+		<p>Codeblazeacademy Bridge the gap between idea and Project reality Trust us for all your online services</p>
+		<div class="service-card-container">
+          <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/web-app-image.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>mobile based software development</h4>
+				<p>
+				 Code <span class="red"> Blaze </span> Academy provides services in all platform mobile devices such as Android Os and Apple Os. Renders both tutorial content s and reading materials for learners.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card-2 -->
+		  <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/web-service-icon.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>web based software development</h4>
+				<p>
+				Code <span class="red"> Blaze </span> Academy offers an in depth tutorials, articles and guides to help learners across th globe to be abreast of the latest technology.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card 3 -->
+		  <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/desktop-service-icon.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>desktop based software development</h4>
+				<p>
+				Offers service in all cross platform desktop computers appications used in Windows, Apple Os, Linux and other desktop based platform.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card 4 -->
+		  <!-- <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="./images/mobile-service-icon.svg" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>mobile based software development</h4>
+				<p>
+				 Code <span class="red"> Blaze </span> Academy provides services in all platform mobile devices such as Android Os and Apple Os. Renders both tutorial contents and reading materials for learners.
+				</p>
+			</div>
+		  </div> -->
+
+		  <!-- card 5 -->
+		  <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/arduino-service-icon.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>arduino base engineering</h4>
+				<p>
+					We provide all Engineering related automated hardware design services such as sensor based hardware project.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card 6 -->
+		  <!-- <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="./images/api-service-icon.svg" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>public programming api</h4>
+				<p>
+				We provide easy to use application programming interface to make web development integration easier.
+				</p>
+			</div>
+		  </div> -->
+		</div>
+	</section>
+
+
+	<!-- Description: courese offered -->
+	<section class="courses-offered" id="affordable-pkgs-section">
+		<h3>courses offered</h3>
+		<div style="text-align:right;">
+			<button id="see-more-btn" class="see-more-btn">see more</button>
+		</div>
+		<div class="cards">
+			<!-- card 1 -->
+			<figure>
+				<div class="card">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/html5-icon.svg' %}" alt="html5 image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">HTML / CSS</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+			
+			<!-- card 2 -->
+			<figure>
+				<div class="card">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/javascript.svg' %}" alt="javascript image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">JavaScript</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+
+			<!-- card 3 -->
+			<figure>
+				<div class="card">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/python.svg' %}" alt="python image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">Python</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+             
+			<!--hidden cards -->
+			<!-- card 4 -->
+			<figure>
+				<div class="card hidden">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/react.svg' %}" alt="react image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">React</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+
+			<!-- card 5 -->
+			<figure>
+				<div class="card hidden">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/github.svg' %}" alt="github image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">Github</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+
+			<!-- card 6 -->
+			<figure>
+				<div class="card hidden">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/bootstrap.svg' %}" alt="bootstrap image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">Bootstrap</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+
+			<!-- card 7 -->
+			<figure>
+				<div class="card hidden">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/design-icon.svg' %}" alt="design image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">Design</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+			
+			<!-- card 8 -->
+			<figure> 
+				<div class="card hidden">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/nodejs.svg' %}" alt="node image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">NodeJs</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+			
+			<!-- card 9 -->
+			<figure>
+				<div class="card hidden">
+					<div class="card-container">
+					<div>
+						<div class="img-container">
+							<img src="{% static './images/php-icon.svg' %}" alt="php image">
+						</div>
+					</div>
+					<figcaption>
+						<p class="card-text">PHP</p>
+					</figcaption>
+					</div>
+				</div>
+			</figure>
+			
+		</div>
+	</section>
+
+	
+
+	<!-- Description: Affordable Section -->
+	<section class="affordable-pkgs-section">
+		<div class="h3">
+		<h3>pricing plan</h3>
+		<small>Affordable Packages</small>
+		</div>
+		<div class="packages-card-container">
+			<!-- card 1 -->
+         <div class="card-wrapper">
+			<div class="card">
+				<div class="card-header">
+					<h4>&dollar;<span class="bold">25</span>/month</h4>
+				</div>
+				<div class="card-body">
+					<p>
+					Front End Development with Core W3C Technology
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="{% url 'register' %}"class="cta-btn">choose plan</a>
+				</div>
+			</div>
+		 </div>
+
+		 <!-- card 2 -->
+		 <div class="card-wrapper">
+			<div class="card">
+				<div class="card-header">
+					<h4>&dollar;<span class="bold">25</span>/month</h4>
+				</div>
+				<div class="card-body">
+					<p>
+				   General Java Programming from Beginners Level to Expert Level.
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="{% url 'register' %}" class="cta-btn">choose plan</a>
+				</div>
+			</div>
+		 </div>
+
+		 <!-- card 3 -->
+		 <div class="card-wrapper">
+			<div class="card">
+				<div class="card-header">
+					<h4>&dollar;<span class="bold">50</span>/month</h4>
+				</div>
+				<div class="card-body">
+					<p>
+					Fullstack Java Desktop App Development with JavaFx
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="{% url 'register' %}" class="cta-btn">choose plan</a>
+				</div>
+			</div>
+		 </div>
+		</div>
+
+		<div class="seemore-btn">
+			<a class="cta-btn" href="{% url 'register' %}">see more</a>
+		</div>
+	</section>
+
+	
+
+<!-- Description:our Team  -->
+<section class="ourteam-section">
+	<h2>Meet the Team </h2>
+	<div class="ourteam-card-container">
+	  <div class="owl-carousel team-carousel">
+		<div class="ourteam-card">
+			<figure>
+				<div class="container-wrapper">
+				<div class="img-container">
+					<img src="{% static './images/solomon.JPG' %}" alt="solomon chiakonam">
+				</div>
+				</div>
+				<figcaption>
+					<div class="team-member-info">
+						<p class="member-name">Solomon Chiakonam Joboson</p>
+						<small>Front End Developer</small>
+						<!-- <h3 class="member-title">CEO / Co-Founder</h3> -->
+					</div>
+					<div class="member-social-handle">
+						<ul>
+							<li>
+								<a href="https://twitter.com/Solobachi?t=mR1RUgAv-zAGeYhbLQ0Ieg&s=09 " target="_blank">
+                                 <span class="fa fa-twitter"></span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.facebook.com/solomon.joboson" target="_blank">
+                                 <span class="fa fa-facebook"></span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/in/joboson-solomon-chiakonam-7a185b1ab" target="_blank">
+                                 <span class="fa fa-linkedin-square"></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</figcaption>
+			</figure>
+		</div>
+		
+		<!-- Team Section -->
+		<div class="ourteam-card">
+			<figure>
+				<div class="container-wrapper">
+				<div class="img-container">
+					<img src="{% static './images/kelechi.JPG' %}" alt="kelechi eze">
+				</div>
+				</div>
+				<figcaption>
+					<div class="team-member-info">
+						<p class="member-name">Eze Christian Kelechi</p>
+						<small>Backend End Developer</small>
+						<!-- <h3 class="member-title">Co-Founder</h3> -->
+					</div>
+					<div class="member-social-handle">
+						<ul>
+							<li>
+								<a href="https://twitter.com/kelchristian" target="_blank">
+                                 <span class="fa fa-twitter"></span>
+								</a>
+							</li>
+							<li>
+								<a href="https://web.facebook.com/profile.php?id=100010171065407" target="_blank">
+                                 <span class="fa fa-facebook"></span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/in/christian-kelechi-eze-6718a3209/" target="_blank">
+                                 <span class="fa fa-linkedin-square"></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</figcaption>
+			</figure>
+		</div>
+
+		<!-- Team Section -->
+		<!-- <div class="ourteam-card">
+			<figure>
+				<div class="container-wrapper">
+				<div class="img-container">
+					<img src="{% static './images/sky-1.jpg' %}" alt="faith chizuruoke">
+				</div>
+				</div>
+				<figcaption>
+					<div class="team-member-info">
+						<p class="member-name">Omeje Faith Chizuroke</p>
+						<small>UI/UX Designer</small>
+						<!-- <h3 class="member-title">Co-Owner</h3> -->
+					</div>
+					<div class="member-social-handle">
+						<ul>
+							<li>
+								<a href="https://mobile.twitter.com/sky_zukky" target="_blank">
+                                 <span class="fa fa-twitter"></span>
+								</a>
+							</li>
+							<li>
+								<a href="https://free.facebook.com/sky.chizzy.7?eav=AfY1Ba783lmS0hJR2YT653T7alcbIKpOjEQG_XY5oJL2VqVgAcDe2JwMgFR1q-_FoSA&refid=7&paipv=0" target="_blank">
+                                 <span class="fa fa-facebook"></span>
+								</a>
+							 </li>
+							 <li>
+								<a href="https://www.linkedin.com/mwlite/in/omeje-faith-a8361a241" target="_blank">
+                                 <span class="fa fa-linkedin-square"></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</figcaption>
+			</figure>
+		</div> -->
+	</div>
+	</div>
+</section>
+
+
+<!-- Description: Contact Us -->
+<section class="contactus-section" id="contactus-section">
+<h3>contact us</h3>
+ <div class="contact-info">
+	<div class="flex-container">
+	  <div class="address">
+		<div class="top">
+		  <div class="img-container">
+				<img src="{% static './images/location-icon.svg' %}" alt="location icon"/>
+			</div>
+			<h4>address</h4>
+		 </div>
+		  <address>
+			No 1 Umunkanka Street
+			<br>
+		    Close to University Secondary School,
+		  <br>
+		  UNN.
+		</address>
+		</div>
+		<div class="phone">
+		 <div class="top">
+			<div class="img-container">
+			<img src="{% static './images/phone-contact-icon.svg' %}" alt="phone icon"/>
+			</div>
+			<h4>phone</h4>
+		</div>
+		<div class="bottom">
+		 <p><a href="tel:+234 9017912839">+234 901-791-2839</a></p>
+		 <p><a href="tel:+234 8082182438">+234 808-218-2438</a></p>
+		 <p><a href="tel:+234 8149213332">+234 814-921-3332</a></p>
+		</div>		 
+		</div>
+		
+		<div class="email">
+         <div class="top">
+			<div class="img-container">
+				<img src="{% static './images/email-contact-icon.svg' %}" alt="email icon"/>
+			</div>
+			<h4>email</h4>
+		 </div>
+		 <a href="mailto:codeblazeacademy@gmail.com"> codeblazeacademy@gmail.com</a>
+		</div>
+	</div>
+
+	<div class="message-row">
+		<h3>message us</h3>
+		<form action="{% url 'index' %}" method="post">
+			{% csrf_token %}
+			<div class="form-field-container">
+			<div class="form-field">
+				<input type="text" name="name" id="name" placeholder="Your name" required/>
+			</div>
+			<div class="form-field">
+				<input type="email"  id="email" name="email" placeholder="Email address" required/>
+			</div>
+			<div class="form-field">
+				<textarea name="message" id="message" cols="24" rows="4" placeholder="Enter your message" required></textarea>
+			</div>
+		   </div>
+			<div class="contactus-btn">
+				<button class="cta-btn" type="submit">send</button>
+			</div>
+		</form>
+	</div>
+ </div>
+
+<!--Description: Chat us -->
+<div class="chat-us">
+	<a href="http://wa.me/+2439017912839/" target="_blank">
+	<div class="chat-message">	
+		<p>Hey Techie ! , How can we help you &quest;</p>
+	</div>
+	<div class="chat-icon">
+		<div class="icon-container">
+			<img src="{% static './images/solomon.JPG' %}">
+			<!-- <img src="./images/codeblazelogo1.png"> -->
+			
+		</div>
+	</div>
+	</a>
+</div>
+</section>
+
+
+
+
+</main>
+
+	<!-- division line -->
+	<div class="division-line">
+	</div>
+	<footer class="site-footer">
+	 <div class="footer-container">
+	 	<h4 class="site-name">code <span class="red">blaze</span> academy</h4>
+	 	<div class="footer-row">
+	 		<div class="flex-items">
+	 			<ul>
+	 				<li><a href="./courses.html">Courses</a></li>
+	 				<li><a href="./teacher.html">Teacher</a></li>
+	 				<li><a href="./faq.html">FAQ</a></li>
+	 				<li><a href="./forum.html">Forum</a></li>
+	 				<li><a href="./services.html">Services</a></li>
+	 			</ul>
+	 		</div>
+	 		<div class="flex-items">
+				<ul>
+					<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+					<li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+					
+					<li><a href="{% url 'courses:courselist' %}">Pricing</a></li>
+				</ul>
+			</div>
+	 		<div class="flex-items">
+	 			<div class="social-icons">
+	 				<ul>
+	 					<li><a href="https://www.facebook.com/codeblazeacademy" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+
+	 					<li><a href="https://www.linkedin.com/company/codeblazeacademy" target="_blank"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
+
+                        <li><a href="" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+	 				</ul>
+	 			</div>
+	 			<!-- <div class="app-download">
+	 			 <a href="#"><img src="{% static './images/app-store.svg' %}" alt="apple store"></a> -->
+	 			<!-- </div> -->
+	 			<!-- <div class="app-download">
+	 			 <a href="#"><img src="{% static './images/googleplay.png' %}" alt="play store"></a>
+	 			</div> -->
+	 		</div>
+	 		<div class="flex-items">
+	 			<address>
+	 				No 1 Umunkanka Street <br>
+	 				Close to University Secondary School <br>
+	 				UNN
+	 			</address>
+	 			<p>Email: <a href="mailto:codeblazeacademy@gmail.com">codeblazeacademy@gmail.com</a>
+	 			</p>
+	 			<small class="copyright">&copy; <span id="updated-year"> </span> Powered By Code Blaze Academy</small>
+	 		</div>
+	 	</div>
+	 </div>
+	</footer>
+    <script src="{% static './js/header.js' %}"></script>
+    <script src="{% static './js/owlcarousel.js' %}"></script>
+    <script>
+    	const updateYear = document.getElementById("updated-year");
+    	const date = new Date();
+    	updateYear.innerText += date.getFullYear();
+
+    </script>
+</body>
+</html>

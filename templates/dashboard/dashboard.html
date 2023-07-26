@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta http-equiv="refresh" content="10"/> -->
+	<title>Codeblaze Academy</title>
+	{% load static %}
+	{% load custom_tags %}
+	<link href="{% static './font-awesome/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static './css/index.css' %}" rel="stylesheet">
+</head>
+<body>
+	<div class="dashboard-wrapper">
+	<header class="header-wrapper dashboard">
+	<div class="site-header">
+		<div class="navigation-container main-nav dashboard-nav">
+		<div class="mobile-header-navicons">
+		<div class="asidebar-btn">
+         <span class="fa fa-bars"></span>
+		</div>
+		<div class="codeblaze-logo">
+		<div class="image-container">
+		<a href="{% url 'index' %}"><img src="{% static 'images/codeblazeacademy-logo.png' %}" alt="company logo">
+		</a>
+		</div></div>
+		<div class="btn-container">
+		<!-- <div><span class="fa fa-ellipsis-v"></span></div> -->
+		<svg class="dashboard-bar-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" width="10" height="35"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 360c30.9 0 56 25.1 56 56s-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56zm0-160c30.9 0 56 25.1 56 56s-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56zM120 96c0 30.9-25.1 56-56 56S8 126.9 8 96S33.1 40 64 40s56 25.1 56 56z"/></svg>
+	    </div>
+	    </div>
+			<nav class="nav-wrapper">
+				{% if user.is_authenticated %}
+				<ul class="nav-menu">
+					<li><a href="{% url 'dashboardhome' %}">Home</a></li>
+					<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+					<li><a href="{% anchor 'index' 'service-section' %}">Services</a></li>
+					<li><a href="{% anchor 'index' 'affordable-pkgs-section' %}">Courses</a></li>
+					<!-- <li><a>Project</a></li> -->
+                    <li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+				</ul>
+				{% endif %}
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="grid-container">
+<aside class="aside-menu">
+<div class="menu">
+<section class="logo-img">
+	<div class="img-container">
+		<img src="{% static 'images/aside-logo.svg' %}" alt="aside logo"/>
+	</div>
+</section>
+<!-- <section class="profile-img">
+	<div class="img-container">
+		<img src="./images/user-image.svg" alt="profile image"/>
+	</div>
+</section> -->
+<section class="aside-menu-links">
+	<ul class="sidebar-contents">
+		<li class="sidebar-row">
+			<a class="active" href="{% url 'dashboardhome' %}">
+				<div class="img-container">
+					<img src="{% static 'images/home-icon.svg' %}" alt="home icon"/>
+				</div>
+				<h3>Home</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="{% url 'dashboardhome' %}">
+				<div class="img-container">
+					<img src="{% static 'images/dashboard-icon.svg' %}" alt="dashboard icon"/>
+				</div>
+				<h3>Dashboard</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="{% url 'courses:courselist' %}">
+				<div class="img-container">
+					<img src="{% static 'images/courses-icon2.svg' %}" alt="courses icon"/>
+				</div>
+				<h3>Courses</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="#">
+				<div class="img-container">
+					<img src="{% static 'images/video-icon.svg' %}" alt="videos icon"/>
+				</div>
+				<h3>Videos</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="#">
+				<div class="img-container">
+					<img src="{% static 'images/calender-icon.svg' %}" alt="calender icon"/>
+				</div>
+				<h3>Calender</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="#">
+				<div class="img-container">
+					<img src="{% static 'images/achievement-icon.svg' %}" alt="achievement icon"/>
+				</div>
+				<h3>Achievement</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="#">
+				<div class="img-container">
+					<img src="{% static 'images/certificate-icon.svg' %}" alt="certification icon"/>
+				</div>
+				<h3>Certification</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="#">
+				<div class="img-container">
+					<img src="{% static 'images/message-icon.svg' %}" alt="message icon"/>
+				</div>
+				<h3>Message</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="{% url 'settingsview' %}">
+				<div class="img-container">
+					<img src="{% static 'images/setting-icon.svg' %}" alt="setting icon"/>
+				</div>
+				<h3>Setting</h3>
+			</a>
+		</li>
+		<li class="sidebar-row">
+			<a href="{% url 'logout' %}">
+				<div class="img-container">
+					<!-- <img src="./images/dashboard-icon.svg" alt="dashboard icon"/> -->
+				</div>
+				<h3>Log Out</h3>
+			</a>
+		</li>
+	</ul>
+</section>
+</div>
+</aside>
+
+<!-- close aside menu -->
+<div class="close-side-menu"></div>
+
+<main class="dashboard-main-contents">
+	
+	<!--Description: Welcome message -->
+<section class="welcome-msg">
+{% if user.is_authenticated %}
+ <div class="header">
+	<h3>Welcome back {{user.first_name}}, {{user.last_name}}!</h3>
+ </div>
+ <div class="body">
+	<p>Start Your Journey in Programming by Learning a Language now</p>
+	<a class="cta-btn" href="{% url 'courses:courselist' %}">Browse Courses</a>
+ </div>
+ <br><br>
+ 
+ {% endif %}
+</section>
+
+<!-- Description:search field -->
+
+
+
+<section class="search-field">
+	<form action="{% url 'coursesearch' %}">
+		<input type="search" id='search' name="search" value="{{ search_text }}" placeholder="Search your course"/>
+
+	</form>
+	
+</section>
+
+{% if 'python' in search %}
+{% if request.user|has_group:"Pythoncourse learners" %}
+<section class="course-section">
+	
+	<div  class="course-card-details">
+	<div class="card-container">
+		
+	<div class="card">
+		
+		<div class="card-header">
+			<h4>{{pythoncourse.title}}</h4>
+		</div>
+		<div class="card-body">
+			<p>{{pythoncourse.overview}}</p>
+		</div>
+		<div class="card-footer">
+			<a class="cta-btn" href="{% url 'pythoncourse:dashboard' %}">Continue now</a>
+		</div>
+	</div>
+	</div>
+	
+		
+
+{% else %}
+<section class="course-section">
+	
+	<div  class="course-card-details">
+	<div class="card-container">
+		
+	<div class="card">
+		
+		<div class="card-header">
+			<h4>{{pythoncourse.title}}</h4>
+		</div>
+		<div class="card-body">
+			<p>{{pythoncourse.overview}}</p>
+		</div>
+		<div class="card-footer">
+			<a class="cta-btn" href="{% url 'courses:pythonpayment' %}">enroll now</a>
+		</div>
+	</div>
+	</div>
+	</div>
+</section>
+		
+
+{% endif %}
+{% endif %}
+</section>
+
+{% if 'html' in search or 'css' in search %}
+{% if request.user|has_group:"Htmlandcsscourse learners" %}
+<section class="course-section">
+	
+	<div  class="course-card-details">
+	<div class="card-container">
+		
+	<div class="card">
+		
+		<div class="card-header">
+			<h4>{{htmlandcsscourse.title}}</h4>
+		</div>
+		<div class="card-body">
+			<p>{{htmlandcsscourse.overview}}</p>
+		</div>
+		<div class="card-footer">
+			<a class="cta-btn" href="{% url 'htmlandcsscourse:dashboard' %}">Continue now</a>
+		</div>
+	</div>
+	</div>	
+	</div>
+</section>
+{% else %}
+<section class="course-section">
+	
+	<div  class="course-card-details">
+	<div class="card-container">
+		
+	<div class="card">
+		
+		<div class="card-header">
+			<h4>{{htmlandcsscourse.title}}</h4>
+		</div>
+		<div class="card-body">
+			<p>{{htmlandcsscourse.overview}}</p>
+		</div>
+		<div class="card-footer">
+			<a class="cta-btn" href="{% url 'courses:htmlandcsspayment' %}">enroll now</a>
+		</div>
+	</div>
+	</div>	
+	</div>
+</section>
+</section>
+{% endif %}
+{% endif %}
+
+
+{% if 'javascript' in search  %}
+{% if request.user|has_group:"Javascriptcourse learners" %}
+<section class="course-section">
+	
+	<div  class="course-card-details">
+	<div class="card-container">
+		
+	<div class="card">
+		
+		<div class="card-header">
+			<h4>{{javascriptcourse.title}}</h4>
+		</div>
+		<div class="card-body">
+			<p>{{javascriptcourse.overview}}</p>
+		</div>
+		<div class="card-footer">
+			<a class="cta-btn" href="{% url 'javascriptcourse:dashboard' %}">Continue now</a>
+		</div>
+	</div>
+	</div>
+	</div>	
+</section>
+{% else %}
+<section class="course-section">
+	<div  class="course-card-details">
+	<div class="card-container">
+		
+	<div class="card">
+		
+		<div class="card-header">
+			<h4>{{javascriptcourse.title}}</h4>
+		</div>
+		<div class="card-body">
+			<p>{{javascriptcourse.overview}}</p>
+		</div>
+		<div class="card-footer">
+			<a class="cta-btn" href="{% url 'courses:javascriptpayment' %}">enroll now</a>
+		</div>
+	</div>
+	</div>	
+
+</section>
+{% endif %}
+{% endif %}
+{% if 'react' in search %}
+{% if request.user|has_group:"Reactcourse learners" %}
+<section class="course-section">
+	
+	<div class="card-container">
+		
+	<div class="card">
+		
+		<div class="card-header">
+			<h4>{{reactcourse.title}}</h4>
+		</div>
+		<div class="card-body">
+			<p>{{reactcourse.overview}}</p>
+		</div>
+		<div class="card-footer">
+			<a class="cta-btn" href="{% url 'reactcourse:dashboard' %}">Continue now</a>
+		</div>
+	</div>
+	</div>	
+</section>
+{% else %}
+<section class="course-section">
+	
+	<div class="card-container">
+		
+	<div class="card">
+		
+		<div class="card-header">
+			<h4>{{reactcourse.title}}</h4>
+		</div>
+		<div class="card-body">
+			<p>{{reactcourse.overview}}</p>
+		</div>
+		<div class="card-footer">
+			<a class="cta-btn" href="{% url 'courses:reactpayment' %}">enroll now</a>
+		</div>
+	</div>
+	</div>	
+
+</section>
+{% endif %}
+
+{% endif %}
+<section class="course-section">
+	<h3>Enrolled Courses</h3>
+	<div class="course-card-details">
+		{% if request.user|has_group:"Htmlandcsscourse learners" %}
+		<div class="card-container">
+			<div class="card">
+			   <div class="card-header">
+				   <h4>html / css</h4>
+			   </div>
+			   <div class="card-body">
+				   <p>HTML / CSS from beginners level to expert level </p>
+			   </div>
+			   <div class="card-footer">
+				   <a class="cta-btn" href="{% url 'htmlandcsscourse:dashboard' %}">Enrolled</a>
+			   </div>
+			</div>
+		   </div>
+		{% endif %}
+	
+		{% if request.user|has_group:"Javascriptcourse learners" %}
+		<div class="card-container">
+			<div class="card">
+			   <div class="card-header">
+				   <h4>javascript</h4>
+			   </div>
+			   <div class="card-body">
+				   <p>Javascript Master Course</p>
+			   </div>
+			   <div class="card-footer">
+				   <a class="cta-btn" href="{% url 'javascriptcourse:dashboard' %}">Continue</a>
+			   </div>
+			</div>
+		   </div>
+		{% endif %}
+
+		{% if request.user|has_group:"Pythoncourse learners" %}
+		<div class="card-container">
+		<div class="card">
+		   <div class="card-header">
+			   <h4>python</h4>
+		   </div>
+		   <div class="card-body">
+			   <p>Complete Master Class in Python </p>
+		   </div>
+		   <div class="card-footer">
+			   <a class="cta-btn" href="{% url 'pythoncourse:dashboard' %}">Enrolled</a>
+		   </div>
+		</div>
+	   </div>
+	   {% endif %}
+	
+	   {% if request.user|has_group:"Reactcourse learners" %}
+	<div class="card-container">
+	<div class="card">
+	   <div class="card-header">
+		   <h4>React</h4>
+	   </div>
+	   <div class="card-body">
+		   <p>Beginner to Advanced Complete Course in React </p>
+	   </div>
+	   <div class="card-footer">
+		   <a class="cta-btn" href="{% url 'reactcourse:dashboard' %}">Enrolled</a>
+	   </div>
+	</div>
+   </div>
+   {% endif %}
+	
+   </div>
+   </section>
+
+<!-- Description: Courses section -->
+<!-- Description: Courses section -->
+<section class="course-section">
+	<h3>All Courses</h3>
+	<div class="course-card-details">
+		{% if request.user|has_group:"Htmlandcsscourse learners" %}
+		<div class="card-container">
+			<div class="card">
+			   <div class="card-header">
+				   <h4>html / css</h4>
+			   </div>
+			   <div class="card-body">
+				   <p>HTML / CSS from beginners level to expert level </p>
+			   </div>
+			   <div class="card-footer">
+				   <a class="cta-btn" href="{% url 'htmlandcsscourse:dashboard' %}">Enrolled</a>
+			   </div>
+			</div>
+		   </div>
+		   {% else %}
+		   <div class="card-container">
+			<div class="card">
+			   <div class="card-header">
+				   <h4>html / css</h4>
+			   </div>
+			   <div class="card-body">
+				   <p>HTML / CSS from beginners level to expert level </p>
+			   </div>
+			   <div class="card-footer">
+				   <a class="cta-btn" href="{% url 'courses:htmlandcsspayment' %}">enroll now</a>
+			   </div>
+			</div>
+		   </div>
+		{% endif %}
+	
+		{% if request.user|has_group:"Javascriptcourse learners" %}
+		<div class="card-container">
+			<div class="card">
+			   <div class="card-header">
+				   <h4>javascript</h4>
+			   </div>
+			   <div class="card-body">
+				   <p>Javascript Master Course</p>
+			   </div>
+			   <div class="card-footer">
+				   <a class="cta-btn" href="{% url 'javascriptcourse:dashboard' %}">Continue</a>
+			   </div>
+			</div>
+		   </div>
+		{% else %}
+		<div class="card-container">
+			<div class="card">
+			   <div class="card-header">
+				   <h4>Javascript</h4>
+			   </div>
+			   <div class="card-body">
+				   <p>Javascript Master Course</p>
+			   </div>
+			   <div class="card-footer">
+				   <a class="cta-btn" href="{% url 'courses:javascriptpayment' %}">Enroll</a>
+			   </div>
+			</div>
+		   </div>
+		{% endif %}
+
+		{% if request.user|has_group:"Pythoncourse learners" %}
+		<div class="card-container">
+		<div class="card">
+		   <div class="card-header">
+			   <h4>python</h4>
+		   </div>
+		   <div class="card-body">
+			   <p>Complete Master Class in Python </p>
+		   </div>
+		   <div class="card-footer">
+			   <a class="cta-btn" href="{% url 'pythoncourse:dashboard' %}">Enrolled</a>
+		   </div>
+		</div>
+	   </div>
+	   {% else %}
+
+	   <div class="card-container">
+		<div class="card">
+		   <div class="card-header">
+			   <h4>python</h4>
+		   </div>
+		   <div class="card-body">
+			   <p>Complete Master Class in Python </p>
+		   </div>
+		   <div class="card-footer">
+			   <a class="cta-btn" href="{% url 'courses:pythonpayment' %}">enroll now</a>
+		   </div>
+		</div>
+	   </div>
+
+	   {% endif %}
+	
+	   {% if request.user|has_group:"Reactcourse learners" %}
+	<div class="card-container">
+	<div class="card">
+	   <div class="card-header">
+		   <h4>React</h4>
+	   </div>
+	   <div class="card-body">
+		   <p>Beginner to Advanced Complete Course in React </p>
+	   </div>
+	   <div class="card-footer">
+		   <a class="cta-btn" href="{% url 'reactcourse:dashboard' %}">Enrolled</a>
+	   </div>
+	</div>
+   </div>
+   {% else %}
+   <div class="card-container">
+	<div class="card">
+	   <div class="card-header">
+		   <h4>React</h4>
+	   </div>
+	   <div class="card-body">
+		   <p>Beginner to Advanced Complete Course in React </p>
+	   </div>
+	   <div class="card-footer">
+		   <a class="cta-btn" href="{% url 'courses:reactpayment' %}">enroll now</a>
+	   </div>
+	</div>
+   </div>
+   {% endif %}
+	
+   </div>
+   </section>
+
+<!-- Description:record section -->
+<section class="track-record-section">
+  <div class="content-wrapper">
+	<div>
+		<h4>Popular Online Tutorial</h4>
+		<a class="seemore-btn" href="{% url 'courses:courselist' %}">see more</a>
+	</div>
+	</div>
+	<div class="track-record">
+	<div class="left-box">
+		<div class="last-section">
+			
+		</div>
+	</div>
+	<div class="right-box">
+		<iframe width="100%" height="100%" src="https://www.youtube.com/embed/aYqsKp1xgYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	</div>
+	</div>
+</section>
+
+</main>	
+</div>
+
+
+	<!-- division line -->
+	<div class="division-line">
+	</div>
+	<footer class="site-footer">
+	 <div class="footer-container">
+	 	<h4 class="site-name">code <span class="red">blaze</span> academy</h4>
+	 	<div class="footer-row">
+	 		<div class="flex-items">
+	 			<ul>
+	 				<li><a href="{% url 'register' %}">Courses</a></li>
+	 				<li><a href="../teacher.html">Teacher</a></li>
+	 				<li><a href="../faq.html">FAQ</a></li>
+	 				<li><a href="../forum.html">Forum</a></li>
+	 				<li><a href="{% anchor 'index' 'service-section' %}">Services</a></li>
+	 			</ul>
+	 		</div>
+	 		<div class="flex-items">
+	 			<ul>
+	 				<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+	 				<li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+	 				<!-- <li><a href="#">Projects</a></li> -->
+	 				<li><a href="#">Pricing</a></li>
+	 			</ul>
+	 		</div>
+	 		<div class="flex-items">
+	 			<div class="social-icons">
+	 				<ul>
+	 					<li><a href="#" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+
+	 					<li><a href="#" target="_blank"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
+
+                        <li><a href="#" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+	 				</ul>
+	 			</div>
+	 			<!-- <div class="app-download">
+	 			 <a href="#"><img src="{% static 'images/app-store.svg' %}" alt="apple store"></a>
+	 			</div>
+	 			<div class="app-download">
+					<a href="#"><img src="{% static 'images/googleplay.png' %}" alt="play store"></a>
+	 			</div> -->
+	 		</div>
+	 		<div class="flex-items">
+				<address>
+					No 1 Umunkanka Street <br>
+					Close to University Secondary School <br>
+					UNN
+	 			</address>
+	 			<p>Email: <a href="mailto:codeblazeacademy@gmail.com">codeblazeacademy@gmail.com</a>
+	 			</p>
+	 			<small class="copyright">&copy; <span id="updated-year"> </span> Powered Code Blaze Academy</small>
+	 		</div>
+	 	</div>
+	 </div>
+	</footer>
+	</div>
+    <!-- <script src="./js/header.js"></script> -->
+    <script src="{% static './js/dashboard.js' %}"></script>
+    <script>
+    	const updateYear = document.getElementById("updated-year");
+    	const date = new Date();
+    	updateYear.innerText += date.getFullYear();
+
+    </script>
+</body>
+</html>

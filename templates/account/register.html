@@ -1,0 +1,284 @@
+
+{% load custom_tags %}
+{% load static %}
+{% load static %}
+{% load custom_tags %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>register</title>
+	<link href="{% static './font-awesome/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static './css/index.css' %}" rel="stylesheet">
+</head>
+<body>
+	<header class="header-wrapper index-page">
+		<div class="site-header">
+			<div class="navigation-container main-nav">
+			<div class="mobile-header-navicons">
+			<div class="codeblaze-logo">
+			<div class="image-container">
+				<a href="{% url 'index' %}"><img src="{% static './images/codeblazeacademy-logo.png' %}" alt="company logo">
+				</a>
+			</div></div>
+			<div class="btn-container">
+			<div class="bar-btn">&#9776;</div>
+			</div>
+			</div>
+				<nav class="nav-wrapper">
+					<ul class="nav-menu">
+						{% if user.is_authenticated %}
+						<li><a href="{% url 'dashboardhome' %}">Home</a></li>
+						<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+						<li><a href="{% anchor 'index' 'service-section' %}">Services</a></li>
+						<li><a href="{% anchor 'index' 'affordable-pkgs-section' %}">Courses</a></li>
+						<li><a>Project</a></li>
+						<li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+						<li><a href="{% url 'logout' %}">Logout</a></li>
+						{% else %}
+						<li><a href="{% url 'dashboardhome' %}">Home</a></li>
+						<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+						<li><a href="{% anchor 'index' 'service-section' %}">Services</a></li>
+						<li><a href="{% anchor 'index' 'affordable-pkgs-section' %}">Courses</a></li>
+						<li><a>Project</a></li>
+						<li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+						<li><a href="{% url 'login' %}">Sign In</a></li>
+						<!-- <li><a href="{% url 'logout' %}">Logout</a></li> -->
+						{% endif %}
+					</ul>
+				</nav>
+			</div>
+	
+<div class="signup_header_container" >
+	<div class="panel signup-panel">
+		<div class="signup-logo-container">
+		<div class="image-container">
+			<img src="{% static './images/signup-logo.svg' %}" alt="codeblazeacademy logo">
+		</div>
+		</div>
+		<div class="panel-header">
+			<a class="cta-link" href="#">Register as a student</a>
+			<a class="cta-link" href="{% anchor 'index' 'contactus-section' %}">Contact as a client</a>
+		</div>
+		<div class="panel-body">
+			<form method="post" action="{% url 'register' %}">
+				{% csrf_token %}
+				
+				<div class="form-field">
+					<label for="firstname">first name</label>
+					<input type="text" name="first_name" id="firstname" required placeholder="rick">
+				</div>
+				{% if registration_form.first_name.errors %}
+				{% for error in registration_form.first_name.errors %}
+    			<smaill style="color:red;">
+        		{{ error|escape }}
+				</smaill>
+				{% endfor %}
+				
+				{% endif %}
+				<div class="form-field">
+					<label for="lastname">last name</label>
+					<input type="text" name="last_name" id="lastname" required placeholder="john bob">
+				</div>
+				{% if registration_form.last_name.errors %}
+				{% for error in registration_form.last_name.errors %}
+    			<smaill style="color:red;">
+        		{{ error|escape }}
+				</smaill>
+				{% endfor %}
+				
+				{% endif %}
+				<div class="form-field">
+					<label for="username">username</label>
+					<input type="text" name="username" id="lastname" required placeholder="john bob">
+				</div>
+				{% if registration_form.username.errors %}
+				{% for error in registration_form.username.errors %}
+    			<smaill style="color:red;">
+        		{{ error|escape }}
+				</smaill>
+				{% endfor %}
+				
+				{% endif %}
+				<div class="form-field">
+					<label for="email">email</label>
+					<input type="email" name="email" id="email" required placeholder="johnbob@gmail.com">
+				</div>
+				{% if registration_form.email.errors %}
+				{% for error in registration_form.email.errors %}
+    			<smaill style="color:red;">
+        		{{ error|escape }}
+				</smaill>
+				{% endfor %}
+				
+				{% endif %}
+				<div class="form-field">
+					<label for="nationality">Country</label>
+					<div class="select-field">
+						{{registration_form.country}}
+					</div>
+					
+				</div>
+				{% if registration_form.country.errors %}
+				{% for error in registration_form.country.errors %}
+    			<smaill style="color:red;">
+        		{{ error|escape }}
+				</smaill>
+				{% endfor %}
+				
+				{% endif %}
+				<div class="form-field">
+					<label for="password">Password</label>
+					<input type="password" class="password" name="password1" id="password" required placeholder="Enter password">
+
+					<!-- Description::open eye icon -->
+					<svg class="eye open-password" width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0_321_745)">
+					   <path d="M17.8514 8.55108C17.6914 8.33589 13.8771 3.28125 9 3.28125C4.12288 3.28125 0.308581 8.33589 0.148574 8.55108C-0.0495246 8.81748 -0.0495246 9.18226 0.148574 9.44866C0.308581 9.66385 4.12288 14.7184 9 14.7184C13.8771 14.7184 17.6914 9.66385 17.8514 9.44866C18.0495 9.18232 18.0495 8.81748 17.8514 8.55108ZM9 12.0119C7.33915 12.0119 5.98797 10.6607 5.98797 8.99987C5.98797 7.33896 7.33915 5.98777 9 5.98777C10.6609 5.98777 12.0121 7.33896 12.0121 8.99987C12.0121 10.6607 10.6608 12.0119 9 12.0119Z" fill="#7B7B7B"/>
+					   <path d="M9.0001 10.2795C9.70669 10.2795 10.2795 9.70669 10.2795 9.0001C10.2795 8.29351 9.70669 7.7207 9.0001 7.7207C8.29351 7.7207 7.7207 8.29351 7.7207 9.0001C7.7207 9.70669 8.29351 10.2795 9.0001 10.2795Z" fill="#7B7B7B"/>
+					</g>
+					<defs>
+					<clipPath id="clip0_321_745">
+					<rect width="18" height="18" fill="white"/>
+					</clipPath>
+					</defs>
+					</svg>
+
+					<!-- Description::closed eye icon -->
+					<svg class="eye close-password" viewBox="0 0 52 48" role="img" aria-labelledby="Hidden62352f0d-12bc-4627-8cd5-c99263867deb Hidden62352f0d-12bc-4627-8cd5-c99263867debDesc" xmlns="http://www.w3.org/2000/svg" style="fill:#7B7B7B; height: 24px; width: 24px;"><path d="M16.977 29.629A9 9 0 0 1 29.63 16.978l5.684-5.685a22.562 22.562 0 0 0-1.378-.583C31.133 9.626 27.935 9 24 9c-6.693 0-12.34 2.35-16.616 6.292C4.14 18.282 2 22.069 2 24c0 2.612 3.755 8.537 8.858 11.748l6.12-6.119zm1.425-1.425l9.803-9.801a7 7 0 0 0-9.802 9.801zM36.814 9.792l7.498-7.5a1 1 0 0 1 1.415 1.415L30.66 18.777 18.774 30.66 3.727 45.707a1 1 0 1 1-1.415-1.414l7.099-7.098C3.95 33.586 0 27.262 0 24c0-2.577 2.411-6.846 6.029-10.18C10.664 9.55 16.789 7 24 7c4.188 0 7.63.673 10.657 1.845.78.302 1.37.564 2.157.947zm11.185 14.24c-.02 2.581-2.425 6.828-6.028 10.147C37.336 38.45 31.211 41 24 41c-2.56 0-5.246-.368-7.287-1.016a1 1 0 1 1 .605-1.906C19.151 38.66 21.634 39 24 39c6.693 0 12.34-2.35 16.616-6.291C43.86 29.719 46 25.932 46 24v-.025c-.015-1.962-1.793-5.448-4.695-8.254a1 1 0 1 1 1.39-1.438C45.97 17.45 48 21.443 48 24v.033zm-16.997-.094a1 1 0 1 1 1.996.125 9.55 9.55 0 0 1-8.936 8.935 1 1 0 0 1-.124-1.996 7.55 7.55 0 0 0 7.064-7.064z" role="presentation"></path></svg>
+
+				</div>
+				{% if registration_form.password1.errors %}
+				{% for error in registration_form.password1.errors %}
+    			<smaill style="color:red;">
+        		{{ error|escape }}
+				</smaill>
+				{% endfor %}
+				
+				{% endif %}
+				<div class="form-field">
+					<label for="confirmPassword">confirm password</label>
+					<input type="password" class="confirmpassword" name="password2" id="confirmpassword" required placeholder="Confirm password">
+
+					<!-- Description::open eye icon -->
+					<svg class="confirm-pswd-eye confirm-pswd-open" width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0_321_745)">
+					   <path d="M17.8514 8.55108C17.6914 8.33589 13.8771 3.28125 9 3.28125C4.12288 3.28125 0.308581 8.33589 0.148574 8.55108C-0.0495246 8.81748 -0.0495246 9.18226 0.148574 9.44866C0.308581 9.66385 4.12288 14.7184 9 14.7184C13.8771 14.7184 17.6914 9.66385 17.8514 9.44866C18.0495 9.18232 18.0495 8.81748 17.8514 8.55108ZM9 12.0119C7.33915 12.0119 5.98797 10.6607 5.98797 8.99987C5.98797 7.33896 7.33915 5.98777 9 5.98777C10.6609 5.98777 12.0121 7.33896 12.0121 8.99987C12.0121 10.6607 10.6608 12.0119 9 12.0119Z" fill="#7B7B7B"/>
+					   <path d="M9.0001 10.2795C9.70669 10.2795 10.2795 9.70669 10.2795 9.0001C10.2795 8.29351 9.70669 7.7207 9.0001 7.7207C8.29351 7.7207 7.7207 8.29351 7.7207 9.0001C7.7207 9.70669 8.29351 10.2795 9.0001 10.2795Z" fill="#7B7B7B"/>
+					</g>
+					<defs>
+					<clipPath id="clip0_321_745">
+					<rect width="18" height="18" fill="white"/>
+					</clipPath>
+					</defs>
+					</svg>
+
+					<!-- Description::closed eye icon -->
+					<svg class="confirm-pswd-eye confirm-pswd-close" viewBox="0 0 52 48" role="img" aria-labelledby="Hidden62352f0d-12bc-4627-8cd5-c99263867deb Hidden62352f0d-12bc-4627-8cd5-c99263867debDesc" xmlns="http://www.w3.org/2000/svg" style="fill:#7B7B7B; height: 24px; width: 24px;"><path d="M16.977 29.629A9 9 0 0 1 29.63 16.978l5.684-5.685a22.562 22.562 0 0 0-1.378-.583C31.133 9.626 27.935 9 24 9c-6.693 0-12.34 2.35-16.616 6.292C4.14 18.282 2 22.069 2 24c0 2.612 3.755 8.537 8.858 11.748l6.12-6.119zm1.425-1.425l9.803-9.801a7 7 0 0 0-9.802 9.801zM36.814 9.792l7.498-7.5a1 1 0 0 1 1.415 1.415L30.66 18.777 18.774 30.66 3.727 45.707a1 1 0 1 1-1.415-1.414l7.099-7.098C3.95 33.586 0 27.262 0 24c0-2.577 2.411-6.846 6.029-10.18C10.664 9.55 16.789 7 24 7c4.188 0 7.63.673 10.657 1.845.78.302 1.37.564 2.157.947zm11.185 14.24c-.02 2.581-2.425 6.828-6.028 10.147C37.336 38.45 31.211 41 24 41c-2.56 0-5.246-.368-7.287-1.016a1 1 0 1 1 .605-1.906C19.151 38.66 21.634 39 24 39c6.693 0 12.34-2.35 16.616-6.291C43.86 29.719 46 25.932 46 24v-.025c-.015-1.962-1.793-5.448-4.695-8.254a1 1 0 1 1 1.39-1.438C45.97 17.45 48 21.443 48 24v.033zm-16.997-.094a1 1 0 1 1 1.996.125 9.55 9.55 0 0 1-8.936 8.935 1 1 0 0 1-.124-1.996 7.55 7.55 0 0 0 7.064-7.064z" role="presentation"></path></svg>
+				</div>
+				{% if registration_form.password2.errors %}
+				{% for error in registration_form.password2.errors %}
+    			<smaill style="color:red;">
+        		{{ error|escape }}
+				</smaill>
+				{% endfor %}
+				
+				{% endif %}
+				<!-- <div class="form-field">
+					<label for="lastname">{{form.last_name.label_tag}}</label>
+					{{form.last_name}}
+				</div>
+				<div class="form-field">
+					<label for="email">{{form.email.label_tag}}</label>
+					{{form.email}}
+				</div>
+				<div class="form-field">
+					<label for="nationality">{{form.country.label_tag}}</label>
+					{{form.country}}
+				</div>
+				<div class="form-field">
+					<label for="password">{{form.password1.label_tag}}</label>
+					{{form.password1}}
+				</div>
+				<div class="form-field">
+					<label for="confirmPassword">{{form.password2.label_tag}}</label>
+					{{form.password2}}
+				</div> -->
+				<button class="cta-btn" type="submit">Sign Up</button>
+			</form>
+		</div>
+		<div class="panel-footer">
+			<p class="alternative-signup">Already on Code Blaze Academy &quest; <a href="{% url 'login' %}" target="_blank"> Login</a></p>
+		</div>
+	</div>
+</div>
+</header>
+<main class="main-contents"></main>
+
+<!-- division line -->
+	<div class="division-line">
+	</div>
+
+<footer class="site-footer">
+	 <div class="footer-container">
+	 	<h4 class="site-name">code <span class="red">blaze</span> academy</h4>
+	 	<div class="footer-row">
+	 		<div class="flex-items">
+	 			<ul>
+	 				<li><a href="./courses.html">Courses</a></li>
+	 				<li><a href="./teacher.html">Teacher</a></li>
+	 				<li><a href="./faq.html">FAQ</a></li>
+	 				<li><a href="./forum.html">Forum</a></li>
+	 				<li><a href="./services.html">Services</a></li>
+	 			</ul>
+	 		</div>
+	 		<div class="flex-items">
+	 			<ul>
+	 				<li><a href="./about.html">About</a></li>
+	 				<li><a href="./contactus.html">Contact Us</a></li>
+	 				<li><a href="./project">Projects</a></li>
+	 				<li><a href="./pricing.html">Pricing</a></li>
+	 			</ul>
+	 		</div>
+	 		<div class="flex-items">
+	 			<div class="social-icons">
+	 				<ul>
+	 					<li><a href="#" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+
+	 					<li><a href="#" target="_blank"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
+
+                        <li><a href="#" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+	 				</ul>
+	 			</div>
+	 			<div class="app-download">
+	 			 <a href="#"><img src="./images/app-store.svg" alt="apple store"></a>
+	 			</div>
+	 			<div class="app-download">
+	 			 <a href="#"><img src="./images/googleplay.png" alt="play store"></a>
+	 			</div>
+	 		</div>
+	 		<div class="flex-items">
+	 			<address>
+	 				No 1 Umunkanka Street <br>
+	 				Close to University Secondary School <br>
+	 				UNN
+	 			</address>
+	 			<p>Email: <a href="mailto:codeblazeacademy@gmail.com">codeblazeacademy@gmail.com</a>
+	 			</p>
+	 			<small class="copyright">&copy; <span id="updated-year"> </span> Powered By Code Blaze Academy</small>
+	 		</div>
+	 	</div>
+	 </div>
+	</footer>
+    <script src="{% static './js/header.js' %}"></script>
+    <script>
+    	const updateYear = document.getElementById("updated-year");
+    	const date = new Date();
+    	updateYear.innerText += date.getFullYear();
+
+    </script>
+</body>
+</html>

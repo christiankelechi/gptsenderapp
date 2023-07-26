@@ -1,0 +1,19 @@
+id:2body:{
+  "id": "cmpl-7ZaAjvFbgaXRkaXBxkVaUhuFwRRZl",
+  "object": "text_completion",
+  "created": 1688714881,
+  "model": "text-davinci-003",
+  "choices": [
+    {
+      "text": "\n\nEmail marketing is an effective way to reach customers and increase ROI. From reaching out to potential leads to thanking existing customers for their purchases, having an email marketing strategy in place can give any business an edge. Email marketing provides businesses with a cost-effective and personal way to reach customers in a targeted and effective manner. \n\nUsing email marketing can have several positive effects on a business\u2019s bottom line. Emails allow businesses to reach new customers, drive sales growth, capture more information about customers, increase brand engagement, and gain market insights. \n\nUsing email marketing campaigns, businesses can reach out to existing customers in order to build relationships and loyalty. They can also be used to attract new leads by offering exclusive deals and discounts. Additionally, email campaigns can be used to collect feedback from customers and gain valuable insights into their needs and preferences. \n\nEmail marketing campaigns are also highly measurable, enabling businesses to track their ROI and understand what content is resonating with customers. As well, emails can be automated so you don\u2019t have to manually send emails every time.\n\nOverall, email marketing is an effective and cost-effective way to reach customers and grow your business. By taking the time to create highly targeted campaigns and track their performance, businesses can significantly increase their ROI and reach new customers.",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5,
+    "completion_tokens": 271,
+    "total_tokens": 276
+  }
+}

@@ -1,0 +1,3 @@
+"Java is a versatile and powerful programming language that enables developers to create robust, high-performance applications. Java programs are platform-independent, meaning they can run on any type of operating system (OS) and hardware. This makes Java ideal for developing cross-platform applications, such as those that run on servers, desktops, mobile devices, andEmbedded systems.
+
+Despite its many strengths, Java is not without its challenges. Memory leaks, ConcurrentSkipListMap class throw Away ConcurrentModificationException, SecurityManager.checkPermission Imprecise, finalizer doesn’t work as releaseableLock Finalizers, etc. Nevertheless, Java remains a popular and indispensible programming language for many developers."

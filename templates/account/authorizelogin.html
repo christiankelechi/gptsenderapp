@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Password reset{% endblock %}
+{% load static %}
+{% block content %}
+
+	<header class="header-wrapper index-page">
+	
+		<div class="minipage_header_container">
+			<div class="minipage-panel">
+				<div class="minipage-contents">
+				<div class="msg-header">
+					<h3>Login Verification</h3>
+				</div>
+				<div class="msg-body">
+                    <form action="{% url 'authorizelogin' %}" method="post">
+                        <h3>Enter Verification Token </h3>
+                        <input type="password" placeholder="Enter Verification token">
+                        <br><br>
+                        <input type="submit" value="Submit" class="cta-btn">
+                    </form>
+				</div>
+			</div>
+			</div>
+		</div>
+
+</header>
+	<main class="main-contents"></main>
+
+<!-- division line -->
+	<div class="division-line">
+	</div>
+
+{% endblock content %}

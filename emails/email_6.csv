@@ -1,0 +1,6 @@
+"',
+            'email__patterns': ['^([^0-9]*)$'],
+            },
+# Common VUI te飞da collections               
+ comEv                 = {
+            'log_msg': 'Common Events',                        # 事件内容改变"

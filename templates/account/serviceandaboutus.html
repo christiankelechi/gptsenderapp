@@ -1,0 +1,292 @@
+{% load static %}
+<main class="main-contents">
+	<!-- Description: Services Section -->
+	<section class="service-section" id="service-section">
+		<h2> services </h2>
+		<h3>codeblaze bridge the gap between idea and reality</h3>
+		<p>trust us for all your online services</p>
+		<div class="service-card-container">
+          <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/web-app-image.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>mobile based software development</h4>
+				<p>
+				 Code <span class="red"> Blaze </span> Academy provides services in all platform mobile devices such as Android Os and Apple Os. Renders both tutorial content s and reading materials for learners.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card-2 -->
+		  <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/web-service-icon.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>web based software development</h4>
+				<p>
+				Code <span class="red"> Blaze </span> Academy offers an in depth tutorials, articles and guides to help learners across th globe to be abreast of the latest technology.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card 3 -->
+		  <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/desktop-service-icon.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>desktop based software development</h4>
+				<p>
+				Offers service in all cross platform desktop computers appications used in Windows, Apple Os, Linux and other desktop based platform.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card 4 -->
+		  <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/mobile-service-icon.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>mobile based software development</h4>
+				<p>
+				 Code <span class="red"> Blaze </span> Academy provides services in all platform mobile devices such as Android Os and Apple Os. Renders both tutorial contents and reading materials for learners.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card 5 -->
+		  <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/arduino-service-icon.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>arduino base engineering</h4>
+				<p>
+					We provide all Engineering related automated hardware design services such as sensor based hardware project.
+				</p>
+			</div>
+		  </div>
+
+		  <!-- card 6 -->
+		  <div class="service-card">
+			<div class="rect-container">
+				<div class="img-container">
+					<img src="{% static './images/api-service-icon.svg' %}" alt="mobile app" />
+				</div>
+			</div>
+			<div class="card-content">
+				<h4>public programming api</h4>
+				<p>
+				We provide easy to use application programming interface to make web development integration easier.
+				</p>
+			</div>
+		  </div>
+		</div>
+	</section>
+
+	<!-- Description: Affordable Section -->
+	<section class="affordable-pkgs-section" id="affordable-pkgs-section">
+		<h3>affordable packages</h3>
+		<div class="packages-card-container">
+			<!-- card 1 -->
+         <div class="card-wrapper">
+			<div class="card">
+				<div class="card-header">
+					<h4>&dollar;<span class="bold">80</span>/month</h4>
+				</div>
+				<div class="card-body">
+					<p>
+					Front End Development with Core W3C Technology
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="./signup.html" class="cta-btn">choose plan</a>
+				</div>
+			</div>
+		 </div>
+
+		 <!-- card 2 -->
+		 <div class="card-wrapper">
+			<div class="card">
+				<div class="card-header">
+					<h4>&dollar;<span class="bold">120</span>/month</h4>
+				</div>
+				<div class="card-body">
+					<p>
+				   General Java Programming from Beginners Level to Expert Level.
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="{% url 'register' %}" class="cta-btn">choose plan</a>
+				</div>
+			</div>
+		 </div>
+
+		 <!-- card 3 -->
+		 <div class="card-wrapper">
+			<div class="card">
+				<div class="card-header">
+					<h4>&dollar;<span class="bold">62</span>/month</h4>
+				</div>
+				<div class="card-body">
+					<p>
+					Fullstack Java Desktop App Development with JavaFx
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="{% url 'register' %}" class="cta-btn">choose plan</a>
+				</div>
+			</div>
+		 </div>
+		</div>
+
+		<div class="seemore-btn">
+			<a class="cta-btn" href="{% url 'register' %}">see more</a>
+		</div>
+	</section>
+	
+	<!-- Description: Popular Courses -->
+	<section class="popular-courses-section" id="popular-courses-section">
+		<h3> popular courses </h3>
+		<div class="popular-card-wrapper">
+			<!--card 1 -->
+			<div class="popular-card">
+              <div class="img-container">
+				<img src="{% static './images/html5-icon.svg' %}" alt="html icon"/>
+			  </div>
+			  <div class="text-content">
+				<h4>html / css</h4>
+			  </div>
+			</div>
+
+			<!-- card-2 -->
+			<div class="popular-card">
+				<div class="img-container">
+				  <img src="{% static './images/nodejs.svg' %}" alt="nodejs icon"/>
+				</div>
+				<div class="text-content">
+				  <h4>node</h4>
+				</div>
+			</div>
+
+			<!-- card-3 -->
+			<div class="popular-card">
+				<div class="img-container">
+				  <img src="{% static './images/bootstrap.svg' %}" alt="bootstrap icon"/>
+				</div>
+				<div class="text-content">
+				  <h4>bootstrap</h4>
+			</div>
+			</div>
+
+			<!-- card-4 -->
+			<div class="popular-card">
+				<div class="img-container">
+				  <img src="{% static './images/github.svg' %}" alt="html icon"/>
+				</div>
+				<div class="text-content">
+				  <h4>github</h4>
+				</div>
+			</div>
+
+			<!-- card-5 -->
+			<div class="popular-card">
+				<div class="img-container">
+				  <img src="{% static './images/react.svg' %}" alt="react icon"/>
+				</div>
+				<div class="text-content">
+				  <h4>react</h4>
+				</div>
+			</div>
+
+			<!-- card-6 -->
+			<div class="popular-card">
+				<div class="img-container">
+				  <img src="{% static './images/python.svg' %}" alt="python icon"/>
+				</div>
+				<div class="text-content">
+				  <h4>python</h4>
+				</div>
+			</div>
+
+			<!-- card-7 -->
+			<div class="popular-card">
+				<div class="img-container">
+				  <img src="{% static './images/javascript.svg' %}" alt="javascript icon"/>
+				</div>
+				<div class="text-content">
+				  <h4>javascript</h4>
+				</div>
+			</div>
+
+			<!-- card 8 -->
+			<div class="popular-card">
+				<div class="img-container">
+				  <img src="{% static './images/design-icon.svg' %}" alt="design icon"/>
+				</div>
+				<div class="text-content">
+				  <h4>design</h4>
+				</div>
+		   </div>
+
+		   <!-- card 9 -->
+		<div class="popular-card">
+			<div class="img-container">
+			  <img src="{% static './images/php-icon.svg' %}" alt="php icon"/>
+			</div>
+			<div class="text-content">
+			  <h4>php</h4>
+			</div>
+		</div>
+
+	</div>
+
+	</section>
+
+  
+	<!-- Description: About us Section -->
+	<section class="aboutus-section" id="aboutus-section">
+		<h3>about us</h3>
+		<div class="flex-container">
+			<div class="flex-item">
+				<div class="img-container">
+					<img src="{% static './images/robot-with-laptop.svg' %}" alt="robot with laptop"/>
+				</div>
+			</div>
+		   <div class="flex-item">
+		   <div class="text-content">
+		   <p>
+			<span class="red">CodeBlaze Academy </span> was established to target audience
+            in business firm, engineering firm and general audience,
+            by providing technology related services that enhance
+            business effectiveness, providing Engineering sectors 
+            with both small scale and large scale designed software 
+            to use for their various activities, such as Arduino based
+            automated systems, pneumatic systems and hardware
+            component and other specialization suh as web and mobile Application development. We also provide learning resources, videos, written materials for our students in order to equip
+            them with trending IT skills. 
+		    </p>
+			<div>
+				<a href="{% url 'register' %}" class="cta-btn">
+					register now
+				</a>
+			</div>
+			</div>
+			</div>
+		</div>
+	</section>
+
+</main>

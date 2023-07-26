@@ -1,0 +1,19 @@
+id:0body:{
+  "id": "cmpl-7ZaAGWdpYiwvMsd3ikkxvV48ORLTy",
+  "object": "text_completion",
+  "created": 1688714852,
+  "model": "text-davinci-003",
+  "choices": [
+    {
+      "text": "\n\nEmail marketing is a great way for any business to increase its visibility, customer base, and profitability. It is an effective digital marketing tool to reach out to potential customers with tailored messages. Email marketing allows businesses to keep their customers informed, build relationships, and even increase sales.\n\nEmail marketing involves using email as a direct marketing tool to send out messages to current and potential customers. Companies can send out newsletters, special offers, or even simple reminders to engage their customers. This technique can be used to increase brand awareness, make direct sales, and even set up an affiliate-based business.\n\nTo ensure success with email marketing, careful target market selection is essential. Crafting messages that will capture the target audience\u2019s attention is also key. It is essential to have clear objectives before sending out emails. Knowing what impact the emails have made and ensuring that the message was received is also important. \n\nEmail marketing requires a lot of time and effort but it can be a very effective and efficient way for businesses to reach potential customers. It can lead to increased customer engagement and ultimately more sales. With the help of the right tools and strategies, email marketing can be an invaluable asset for any business.",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5,
+    "completion_tokens": 245,
+    "total_tokens": 250
+  }
+}

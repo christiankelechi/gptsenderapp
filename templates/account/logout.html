@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+  
+  <header class="header-wrapper index-page">
+           <!-- division line -->
+         <!-- <div class="division-line">
+         </div>
+   -->		<!-- header contents -->
+      <div class="minipage_header_container">
+        <div class="minipage-panel">
+          <div class="minipage-contents">
+          <div class="msg-header">
+  <p>You are logged Out 
+  </p><br><br>
+  <p><a class="cta-btn" href="{% url 'login' %}">Log In Again</a></p>
+  
+      
+    
+            
+          </div>
+        </div>
+        </div>
+      </div>
+    
+  </header>
+    <main class="main-contents"></main>
+  
+  <!-- division line -->
+    <div class="division-line">
+    </div>
+{% endblock content %}

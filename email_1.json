@@ -1,0 +1,19 @@
+id:1body:{
+  "id": "cmpl-7ZaARyRSEiF9hagdgJd8agQO5Z0md",
+  "object": "text_completion",
+  "created": 1688714863,
+  "model": "text-davinci-003",
+  "choices": [
+    {
+      "text": "\n\nEmail marketing is a powerful tool used to engage with customers and capture new leads. It can be used to drive sales, increase engagement, and build relationships. Email marketing is a great way to keep customers updated on your latest products, offers, updates, and news. It is also incredibly effective when used to build relationships with customers and establish loyalty.\n\nWhen used correctly, email marketing provides businesses with powerful insights into their customers. It allows you to track customer behavior, engagement, and interests. You can develop better communication tactics when you know who your customers are.\n\nWith the right email marketing strategies, businesses can nurture leads more quickly and cost-effectively. By segmenting your lists, you can target the right customers with the right messages. You can also segment your lists to send personalized emails, giving customers the feeling that it\u2019s a personalized message just for them. \n\nYou can use email marketing to build trust with customers. When you create content that resonates with your audience, they\u2019ll be more likely to stick with your business. Emails can also be used to nurture relationships with your customers, providing useful information, or even exclusive offers, that entice them to come back for more. \n\nOverall, email marketing is a powerful tool for businesses of any size. It\u2019s an effective way to drive sales, increase engagement, and build relationships. It also offers valuable insights into customer behavior, allowing you to tailor your marketing campaigns",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5,
+    "completion_tokens": 300,
+    "total_tokens": 305
+  }
+}

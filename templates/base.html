@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+     crossorigin="anonymous"></script> -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Codeblaze Academy</title>
+	{% load custom_tags %}
+	{% load static %}
+	<link href="{% static './font-awesome/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+	
+	
+	
+	<link href="{% static './css/index.css' %}" rel="stylesheet">
+	
+</head>
+<body>
+	<header class="header-wrapper index-page">
+	<div class="site-header">5
+		<div class="navigation-container main-nav">
+		<div class="mobile-header-navicons">
+		<div class="codeblaze-logo">
+		<div class="image-container">
+		<a href="{% url 'index' %}"><img src="{% static './images/codeblazeacademy-logo.png' %}" alt="company logo">
+		</a>
+		</div></div>
+		<div class="btn-container">
+		<div class="bar-btn">&#9776;</div>
+	    </div>
+	    </div>
+			<nav class="nav-wrapper">
+				<ul class="nav-menu">
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'dashboardhome' %}">Home</a></li>
+					<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+					<li><a href="{% anchor 'index' 'service-section' %}">Services</a></li>
+					<li><a href="{% anchor 'index' 'affordable-pkgs-section' %}">Courses</a></li>
+					<!-- <li><a>Project</a></li> -->
+                    <li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+					<li><a href="{% url 'logout' %}">Logout</a></li>
+					{% else %}
+					<li><a href="{% url 'dashboardhome' %}">Home</a></li>
+					<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+					<li><a href="{% anchor 'index' 'service-section' %}">Services</a></li>
+					<li><a href="{% anchor 'index' 'affordable-pkgs-section' %}">Courses</a></li>
+					<!-- <li><a>Project</a></li> -->
+                    <li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+                    <li><a href="{% url 'login' %}">Sign In</a></li>
+					<!-- <li><a href="{% url 'logout' %}">Logout</a></li> -->
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+		
+
+		{% block content%}
+
+        {% endblock content %}
+
+<!-- <main class="main-contents"></main> -->
+
+	<!-- division line -->
+	<div class="division-line">
+	</div>
+	<footer class="site-footer">
+	 <div class="footer-container">
+	 	<h4 class="site-name">code <span class="red">blaze</span> academy</h4>
+	 	<div class="footer-row">
+	 		<div class="flex-items">
+	 			<ul>
+	 				<li><a href="{% anchor 'index' 'affordable-pkgs-section' %}">Courses</a></li>
+	 				<li><a href="./teacher.html">Teacher</a></li>
+	 				<li><a href="./faq.html">FAQ</a></li>
+	 				<li><a href="./forum.html">Forum</a></li>
+	 				<li><a href="./services.html">Services</a></li>
+	 			</ul>
+	 		</div>
+	 		<div class="flex-items">
+	 			<ul>
+	 				<li><a href="{% anchor 'index' 'aboutus-section' %}">About</a></li>
+	 				<li><a href="{% anchor 'index' 'contactus-section' %}">Contact Us</a></li>
+	 				<!-- <li><a href="./project">Projects</a></li> -->
+	 				<li><a href="./pricing.html">Pricing</a></li>
+	 			</ul>
+	 		</div>
+	 		<div class="flex-items">
+	 			<div class="social-icons">
+	 				<ul>
+	 					<li><a href="#" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+
+	 					<li><a href="#" target="_blank"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
+
+                        <li><a href="#" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+	 				</ul>
+	 			</div>
+	 			
+	 		</div>
+	 		<div class="flex-items">
+				<address>
+					No 1 Umunkanka Street <br>
+					Close to University Secondary School <br>
+					UNN
+	 			</address>
+	 			<p>Email: <a href="mailto:codeblazeacademy@gmail.com">codeblazeacademy@gmail.com</a>
+	 			</p>
+	 			<small class="copyright">&copy; <span id="updated-year"> </span> Powered Code Blaze Academy</small>
+	 		</div>
+	 	</div>
+	 </div>
+	</footer>
+    <script src="{% static './js/header.js' %}"></script>
+    <script>
+    	const updateYear = document.getElementById("updated-year");
+    	const date = new Date();
+    	updateYear.innerText += date.getFullYear();
+
+    </script>
+</body>
+</html>
